@@ -21,3 +21,17 @@
     margin: 0 auto;
     font-size: 18px;
 }
+.eventList{
+    border: 1px solid;
+    border-radius: 5px;
+    width: 40%;
+    margin-top: 10px;
+}
+.list {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+}
+p {
+    /* margin-right: 20px; */
+}
