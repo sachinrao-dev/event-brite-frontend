@@ -12,8 +12,8 @@ function CreateEvent() {
     const data = {
       event_name: eventName,
       event_description: description,
-      start_date: startDate,
-      end_date: endDate,
+      start_date: `${new Date(startDate).toISOString().slice(0, -5)}Z`,
+      end_date: `${new Date(endDate).toISOString().slice(0, -5)}Z`,
       capacity,
     };
     console.log(data, "data");

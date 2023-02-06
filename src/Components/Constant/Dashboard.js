@@ -28,7 +28,7 @@ function Dashboard() {
 
   return (
     <div>
-      {data?.map((item) => (
+      {data?.map((item, index) => (
         <div className="eventList">
           <div className="list">
             <p className="event">Event name : </p>
@@ -40,18 +40,18 @@ function Dashboard() {
           </div>
           <div className="list">
             <p>Start date :</p>
-            <p>{item.start_date}</p>
+            <p>{item.start_date.split("T")[0]}</p>
           </div>
           <div className="list">
             <p>End Date :</p>
-            <p>{item.end_date}</p>
+            <p>{item.end_date.split("T")[0]}</p>
           </div>
           <div className="list">
             <p>Capacity :</p>
             <p>{item.capacity}</p>
           </div>
           <div className="action">
-            <button type="button" onClick={() => upDateHandler(item._id)}>
+            <button type="button" onClick={() => upDateHandler(item._id, index)}>
               Update
             </button>
             <button type="button" onClick={() => deleteEvent(item._id)}>
