@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../Style/LoginStyle.css";
 
 function CreateEvent() {
+  const navigate = useNavigate();
   const [eventName, setEventName] = useState();
   const [description, setDescription] = useState();
   const [startDate, setStartDate] = useState();
@@ -25,6 +27,7 @@ function CreateEvent() {
         "Content-Type": "application/json",
       },
     });
+    navigate("/dashboard");
   };
 
   return (

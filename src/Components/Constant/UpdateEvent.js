@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function UpdateEvent() {
   const [eventName, setEventName] = useState("");
@@ -10,6 +10,7 @@ function UpdateEvent() {
   const [endDate, setEndDate] = useState();
   const [capacity, setCapacity] = useState();
   const params = useParams();
+  const navigate = useNavigate();
 
   const getData = async () => {
     let result = await fetch(`http://localhost:7089/event/update/${params.id}`);
@@ -36,11 +37,10 @@ function UpdateEvent() {
       method: "Put",
       body: JSON.stringify(updatedInfo),
       headers: {
-        Content_Type: "Application/json",
+        "Content-Type": "application/json",
       },
     });
-    // result = await result.json();
-    // console.log(result, "result");
+    navigate("/dashboard");
   };
   return (
     <div>
