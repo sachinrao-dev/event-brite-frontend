@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable array-callback-return */
 import axios from "axios";
@@ -27,12 +30,17 @@ function Dashboard() {
     });
   };
 
+  const EventDetails = (id) => {
+    console.log(id, "id is here");
+    navigate(`/eventDetail/${id}`);
+  };
+
   return (
     <div>
       <NavBar />
       <div className="dashboard">
         {data?.map((item, index) => (
-          <div className="eventList">
+          <div className="eventList" onClick={() => EventDetails(item._id)}>
             <div className="list">
               <p className="event">Event name : </p>
               <p>{item.event_name}</p>
