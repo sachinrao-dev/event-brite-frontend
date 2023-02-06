@@ -21,3 +21,50 @@
     margin: 0 auto;
     font-size: 18px;
 }
+.eventList{
+    border: 1px solid;
+    border-radius: 5px;
+    width: 40%;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+}
+.list {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+.dashboard{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    /* width: 100%; */
+}
+.MainContainer{
+    width: 100%;
+    margin: 0 auto;
+}
+.TextInput{
+    width: 15%;
+    height: 20px;
+    display: flex;
+    align-self: center;
+    text-align: center;
+}
+.insertButton{
+    display: flex;
+    justify-content: center;
+}
+.insertDataForm{
+    width: 100%;
+
+}
+.eventDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
