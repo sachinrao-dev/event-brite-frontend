@@ -34,6 +34,7 @@
 .list {
     display: flex;
     flex-direction: row;
+    text-align: center;
     justify-content: center;
 }
 .dashboard{
@@ -45,4 +46,19 @@
 .MainContainer{
     width: 100%;
     margin: 0 auto;
+}
+.TextInput{
+    width: 15%;
+    height: 20px;
+    display: flex;
+    align-self: center;
+    text-align: center;
+}
+.insertButton{
+    display: flex;
+    justify-content: center;
+}
+.insertDataForm{
+    width: 100%;
+
 }

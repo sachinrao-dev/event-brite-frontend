@@ -17,21 +17,8 @@ function Dashboard() {
       setData(response.data);
     });
   }, []);
-  const upDateHandler = (id) => {
-    navigate(`/update/${id}`);
-  };
-
-  const deleteEvent = async (id) => {
-    await fetch(`http://localhost:7089/event/delete/${id}`, {
-      method: "Delete",
-    });
-    axios.get("http://localhost:7089/event/list").then((response) => {
-      setData(response.data);
-    });
-  };
 
   const EventDetails = (id) => {
-    console.log(id, "id is here");
     navigate(`/eventDetail/${id}`);
   };
 
@@ -39,7 +26,7 @@ function Dashboard() {
     <div>
       <NavBar />
       <div className="dashboard">
-        {data?.map((item, index) => (
+        {data?.map((item) => (
           <div className="eventList" onClick={() => EventDetails(item._id)}>
             <div className="list">
               <p className="event">Event name : </p>
@@ -60,17 +47,6 @@ function Dashboard() {
             <div className="list">
               <p>Capacity :</p>
               <p>{item.capacity}</p>
-            </div>
-            <div className="action">
-              <button
-                type="button"
-                onClick={() => upDateHandler(item._id, index)}
-              >
-                Update
-              </button>
-              <button type="button" onClick={() => deleteEvent(item._id)}>
-                delete
-              </button>
             </div>
           </div>
         ))}
