@@ -62,3 +62,9 @@
     width: 100%;
 
 }
+.eventDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

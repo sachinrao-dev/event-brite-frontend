@@ -30,11 +30,20 @@ function SingleEvent() {
     navigate(`/update/${params.id}`);
   };
   return (
-    <div>
-      <p>{data?.event_name}</p>
-      <p>{data?.event_description}</p>
-      <p>{data?.capacity}</p>
-      <div>
+    <div className="eventDetails">
+      <div className="list">
+        <p>Event Name :</p>
+        <p>{data?.event_name}</p>
+      </div>
+      <div className="list">
+        <p>Description :</p>
+        <p>{data?.event_description}</p>
+      </div>
+      <div className="list">
+        <p>Capacity :</p>
+        <p>{data?.capacity}</p>
+      </div>
+      <div className="insertButton">
         <button type="button" onClick={() => upDateHandler()}>
           Update
         </button>

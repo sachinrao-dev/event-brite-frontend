@@ -43,10 +43,11 @@ function UpdateEvent() {
     navigate("/dashboard");
   };
   return (
-    <div>
+    <div className="insertDataForm">
       <div className="list">
         <p>Event name :</p>
         <input
+          className="TextInput"
           type="text"
           value={eventName}
           onChange={(e) => setEventName(e.target.value)}
@@ -55,6 +56,7 @@ function UpdateEvent() {
       <div className="list">
         <p>Description :</p>
         <input
+          className="TextInput"
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -63,6 +65,7 @@ function UpdateEvent() {
       <div className="list">
         <p>Start Date : </p>
         <input
+          className="TextInput"
           type="Date"
           value={startDate?.split("T")[0]}
           onChange={(e) => setStartDate(e.target.value)}
@@ -71,6 +74,7 @@ function UpdateEvent() {
       <div className="list">
         <p>End Date :</p>
         <input
+          className="TextInput"
           type="Date"
           value={endDate?.split("T")[0]}
           onChange={(e) => setEndDate(e.target.value)}
@@ -79,14 +83,17 @@ function UpdateEvent() {
       <div className="list">
         <p>Capacity :</p>
         <input
+          className="TextInput"
           type="number"
           value={capacity}
           onChange={(e) => setCapacity(e.target.value)}
         />
       </div>
-      <button type="button" onClick={updateData}>
-        Update
-      </button>
+      <div className="insertButton">
+        <button type="button" onClick={updateData}>
+          Update
+        </button>
+      </div>
     </div>
   );
 }
