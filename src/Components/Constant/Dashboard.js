@@ -3,6 +3,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import NavBar from "./NavBar";
 import "../Style/LoginStyle.css";
 
 function Dashboard() {
@@ -28,38 +29,44 @@ function Dashboard() {
 
   return (
     <div>
-      {data?.map((item, index) => (
-        <div className="eventList">
-          <div className="list">
-            <p className="event">Event name : </p>
-            <p>{item.event_name}</p>
+      <NavBar />
+      <div className="dashboard">
+        {data?.map((item, index) => (
+          <div className="eventList">
+            <div className="list">
+              <p className="event">Event name : </p>
+              <p>{item.event_name}</p>
+            </div>
+            <div className="list">
+              <p>Description :</p>
+              <p>{item.event_description}</p>
+            </div>
+            <div className="list">
+              <p>Start date :</p>
+              <p>{item.start_date.split("T")[0]}</p>
+            </div>
+            <div className="list">
+              <p>End Date :</p>
+              <p>{item.end_date.split("T")[0]}</p>
+            </div>
+            <div className="list">
+              <p>Capacity :</p>
+              <p>{item.capacity}</p>
+            </div>
+            <div className="action">
+              <button
+                type="button"
+                onClick={() => upDateHandler(item._id, index)}
+              >
+                Update
+              </button>
+              <button type="button" onClick={() => deleteEvent(item._id)}>
+                delete
+              </button>
+            </div>
           </div>
-          <div className="list">
-            <p>Description :</p>
-            <p>{item.event_description}</p>
-          </div>
-          <div className="list">
-            <p>Start date :</p>
-            <p>{item.start_date.split("T")[0]}</p>
-          </div>
-          <div className="list">
-            <p>End Date :</p>
-            <p>{item.end_date.split("T")[0]}</p>
-          </div>
-          <div className="list">
-            <p>Capacity :</p>
-            <p>{item.capacity}</p>
-          </div>
-          <div className="action">
-            <button type="button" onClick={() => upDateHandler(item._id, index)}>
-              Update
-            </button>
-            <button type="button" onClick={() => deleteEvent(item._id)}>
-              delete
-            </button>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
